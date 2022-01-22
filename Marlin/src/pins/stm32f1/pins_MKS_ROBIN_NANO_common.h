@@ -77,13 +77,43 @@
 #define Z_STEP_PIN                          PB5
 #define Z_DIR_PIN                           PB4
 
-#define E0_ENABLE_PIN                       PB3
-#define E0_STEP_PIN                         PD6
-#define E0_DIR_PIN                          PD3
+#ifdef MOTHERBOARD_SV1_3
+  #ifndef SWAP_E0_E1_PINS
+    #define E0_ENABLE_PIN                       PB3
+    #define E0_STEP_PIN                         PD6
+    #define E0_DIR_PIN                          PD3
 
-#define E1_ENABLE_PIN                       PA3
-#define E1_STEP_PIN                         PA6
-#define E1_DIR_PIN                          PA1
+    #define E1_ENABLE_PIN                       PA3
+    #define E1_STEP_PIN                         PA6
+    #define E1_DIR_PIN                          PA1
+  #else
+    #define E0_ENABLE_PIN                       PA3
+    #define E0_STEP_PIN                         PA6
+    #define E0_DIR_PIN                          PA1
+
+    #define E1_ENABLE_PIN                       PB3
+    #define E1_STEP_PIN                         PD6
+    #define E1_DIR_PIN                          PD3
+  #endif
+#else
+  #if ENABLED(SWAP_Z_E_PINS)
+    #define E0_ENABLE_PIN                       PA3
+    #define E0_STEP_PIN                         PA6
+    #define E0_DIR_PIN                          PA1
+
+    #define Z2_ENABLE_PIN                       PB3
+    #define Z2_STEP_PIN                         PD6
+    #define Z2_DIR_PIN                          PD3
+  #else
+    #define E0_ENABLE_PIN                       PB3
+    #define E0_STEP_PIN                         PD6
+    #define E0_DIR_PIN                          PD3
+
+    #define Z2_ENABLE_PIN                       PA3
+    #define Z2_STEP_PIN                         PA6
+    #define Z2_DIR_PIN                          PA1
+  #endif
+#endif
 
 //
 // Temperature Sensors
@@ -135,7 +165,7 @@
 //
 #if HAS_TFT_LVGL_UI
   #define MT_DET_1_PIN                      PA4
-  #define MT_DET_2_PIN                      PE6
+  //#define MT_DET_2_PIN                      PE6
   #define MT_DET_PIN_STATE                  LOW
 
   #define WIFI_IO0_PIN                      PC13
