@@ -600,9 +600,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp   14.32//26.04 //VOLCANO
+    #define DEFAULT_Kp   26.04 //VOLCANO
     #define DEFAULT_Ki    1.23 //VOLCANO
-    #define DEFAULT_Kd  366.69//137.51 //VOLCANO
+    #define DEFAULT_Kd  137.51 //VOLCANO
   #endif
 #endif // PIDTEMP
 
