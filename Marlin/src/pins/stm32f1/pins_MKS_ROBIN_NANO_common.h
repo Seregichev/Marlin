@@ -164,7 +164,10 @@
 // Misc. Functions
 //
 #if HAS_TFT_LVGL_UI
-  #define MT_DET_1_PIN                      PA4
+  //#define MT_DET_1_PIN                      PA4
+
+  #define FIL_RUNOUT_PIN                    PA4
+
   //#define MT_DET_2_PIN                      PE6
   #define MT_DET_PIN_STATE                  LOW
 
