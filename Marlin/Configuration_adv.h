@@ -470,7 +470,7 @@
 // Extruder runout prevention.
 // If the machine is idle and the temperature over MINTEMP
 // then extrude some filament every couple of SECONDS.
-#define EXTRUDER_RUNOUT_PREVENT
+//#define EXTRUDER_RUNOUT_PREVENT
 #if ENABLED(EXTRUDER_RUNOUT_PREVENT)
   #define EXTRUDER_RUNOUT_MINTEMP 190
   #define EXTRUDER_RUNOUT_SECONDS 30
@@ -2304,7 +2304,7 @@
  * Currently handles M108, M112, M410, M876
  * NOTE: Not yet implemented for all platforms.
  */
-//#define EMERGENCY_PARSER
+#define EMERGENCY_PARSER
 
 /**
  * Realtime Reporting (requires EMERGENCY_PARSER)
